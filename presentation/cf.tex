@@ -90,12 +90,42 @@
 \begin{itemize}
 	\item Obraz CloudForms dostępny jest jako appliance.
 	\begin{itemize}
-		\item {\tt ovirt-image-uploader -N cfme -e export -v -m upload cfme-rhevm-5.7.1.3-1.x86\_64.rhevm.ova}
+		\item {\tt ovirt-image-uploader -N cfme -e export -m upload cfme-rhevm-5.7.1.3-1.x86\_64.rhevm.ova}
 	\end{itemize}
-
-
+	\item Import szablonu.
+	\item Nowa maszyna wirtualna z zaimportowanego szablonu.
+	\begin{itemize}
+		\item Interfejs sieciowy.
+		\item Dodatkowy dysk na bazę danych.
+	\end{itemize}
+	\item Start maszyny wirtualnej.
+	\item Logowanie po SSH: {\tt root} / {\tt smartvm}.
 \end{itemize}
 \end{frame}
+
+\begin{frame}
+\frametitle{Konfiguracaja CloudForms}
+\begin{itemize}
+	\item Rejestracja i subskrypcja w Red Hat.
+	\item Konsola zarządzania: {\tt appliance\_console}.
+	\item Rekonfiguracja sieci na adresację statyczną (na screenie).
+	\item Zmiana strefy czasowej.
+	\item Konfiguracja bazy danych.
+	\begin{itemize}
+		\item Dodatkowy dysk dodany do maszyny wirtualnej dla bazy danych.
+	\end{itemize}
+	\item Logowanie do interfejsu webowego...
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Dodawanie infrastruktury do CloudForms}
+\begin{itemize}
+	\item Compute -> Infrastructure -> Providers.
+	\item Configuration -> Add a new infrastructure provider.
+\end{itemize}
+\end{frame}
+
 
 \end{document}
 
