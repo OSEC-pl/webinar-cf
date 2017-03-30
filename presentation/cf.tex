@@ -75,6 +75,8 @@
 \setlength{\tabcolsep}{8pt}
 \renewcommand{\arraystretch}{1.2}
 
+\newcommand{\tri}{$\triangleright$ }
+
 \title{Zarządzanie Red Hat Virtualization \\ z użyciem CloudForms}
 \author{Radosław Kujawa -- radoslaw.kujawa@osec.pl}
 \institute{OSEC}
@@ -83,6 +85,23 @@
 
 \begin{frame}
 	\titlepage
+\end{frame}
+
+\begin{frame}
+\frametitle{Bardzo krótkie wprowadzenie do CloudForms}
+\begin{itemize}
+	\item Narzędzie do zarządzania środowiskiem IT.
+	\item Spójny frontend dla całej infrastruktury wirtualizacji oraz chmury. 
+	\item Self service dla użytkowników.
+	\item Projekt upstream: \url{http://ManageIQ.org}.
+	\item Siła CloudForms leży w jego rozszerzalności!
+	\begin{itemize}
+		\item Zarówno na poziomie danych jakie może prezentować\ldots
+		\item Zmian w infrastrukturze jakie może wprowadzać\ldots
+		\item Jak i w możliwości integracji z systemami backendowymi\ldots
+	\end{itemize}	
+	\item Od czegoś trzeba zacząć: jak wdrożyć CloudForms na RHV w godzinę lub mniej. \Smiley 
+\end{itemize}
 \end{frame}
 
 \begin{frame}
@@ -99,33 +118,68 @@
 		\item Dodatkowy dysk na bazę danych.
 	\end{itemize}
 	\item Start maszyny wirtualnej.
-	\item Logowanie po SSH: {\tt root} / {\tt smartvm}.
+	\item Logowanie do appliance: {\tt root} / {\tt smartvm}.
 \end{itemize}
 \end{frame}
 
 \begin{frame}
 \frametitle{Konfiguracaja CloudForms}
 \begin{itemize}
-	\item Rejestracja i subskrypcja w Red Hat.
 	\item Konsola zarządzania: {\tt appliance\_console}.
-	\item Rekonfiguracja sieci na adresację statyczną (na screenie).
+	\item Rekonfiguracja sieci na adresację statyczną (na screenie lub przez konsolę maszyny wirtualnej).
 	\item Zmiana strefy czasowej.
+	\item Synchronizacja czasu z serwerami NTP.
+	\item Ustawienie nazwy hosta.
 	\item Konfiguracja bazy danych.
 	\begin{itemize}
 		\item Dodatkowy dysk dodany do maszyny wirtualnej dla bazy danych.
 	\end{itemize}
-	\item Logowanie do interfejsu webowego...
+	\item Logowanie do interfejsu webowego -- bezpośrednio pod adresem appliance'u\ldots \url{http://cf.demo.osec.pl/}
+	\item Rejestracja i subskrypcja w Red Hat.
 \end{itemize}
 \end{frame}
 
 \begin{frame}
 \frametitle{Dodawanie infrastruktury do CloudForms}
 \begin{itemize}
-	\item Compute -> Infrastructure -> Providers.
-	\item Configuration -> Add a new infrastructure provider.
+	\item Dodajmy naszą instalację RHV do CloudForms!
+	\begin{itemize}
+		\item Compute \tri Infrastructure \tri Providers.
+		\item Configuration \tri Add a new infrastructure provider.
+		\item Type \tri Red Hat Virtualization Manager.
+		\item Hostname, username, password\ldots
+	\end{itemize}
 \end{itemize}
 \end{frame}
 
+\begin{frame}
+\frametitle{Provisioning maszyn wirtualnych}
+\begin{itemize}
+	\item Compute \tri Infrastructure \tri Virtual Machines.
+	\item Lifecycle \tri Provision VMs.
+	\item Wybieramy template\ldots
+	\item Request \tri E-mail, First Name, Last Name.
+	\item Catalog \tri VM Name.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Przyjdź na barcamp OSEC}
+\begin{itemize}
+	\item Gość specjalny: Carol Chen -- Community Development Manager ManageIQ/CloudForms at Red Hat.
+	\item Prezentacja i demo na żywo ManageIQ -- dowiedz się więcej o jego możliwościach.
+	\item 4 Kwietnia 2017.
+	\item \url{https://osec.pl/barcamp/barcamp-kwiecien-2017}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Dziękuję!}
+\begin{itemize}
+	\item Jeśli macie dodatkowe pytania...
+	\item radoslaw.kujawa@osec.pl
+\end{itemize}
+\end{frame}
 
 \end{document}
 
